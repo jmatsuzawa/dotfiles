@@ -75,7 +75,6 @@ augroup Binary
 augroup END
  
 
-
 filetype indent plugin on
 
 
@@ -90,22 +89,3 @@ au FileType smarty source ${HOME}/.vim/after/ftplugin/smarty.vim
 au FileType vim source ${HOME}/.vim/after/ftplugin/vim.vim
 au FileType xml source ${HOME}/.vim/after/ftplugin/xml.vim
 au FileType zsh source ${HOME}/.vim/after/ftplugin/zsh.vim
-
-
-
-" for skk.vim
-" inoremap <C-k> <Plug>(skk-toggle-im)
-" nnoremap <C-k> i<Plug>(skk-toggle-im)
-" let g:skk_large_jisyo = '/usr/share/skk/SKK-JISYO.L'
-
-" for conque
-" command! -nargs=+ -complete=shellcmd Term call conque_term#open(<q-args>)
-" command! -nargs=+ -complete=shellcmd Terms call conque_term#open(<q-args>, ['belowright split'])
-" command! -nargs=+ -complete=shellcmd Termv call conque_term#open(<q-args>, ['belowright vsplit'])
-" command! -nargs=+ -complete=shellcmd Termt call conque_term#open(<q-args>, ['tabnew'])
-" command! -complete=shellcmd Shell call conque_term#open('zsh')
-" command! -complete=shellcmd Shells call conque_term#open('zsh', ['belowright split'])
-" command! -complete=shellcmd Shellv call conque_term#open('zsh', ['belowright vsplit'])
-" command! -complete=shellcmd Shellt call conque_term#open('zsh', ['tabnew'])
-
-
