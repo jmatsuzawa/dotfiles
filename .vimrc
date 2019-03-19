@@ -28,7 +28,7 @@ noremap j gj
 noremap k gk
 noremap gj j
 noremap gk k
-nnoremap va `[v`]
+nnoremap vv `[v`]
 noremap mh `[
 noremap ml `]
 " nnoremap <C-h> hx
