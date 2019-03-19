@@ -53,6 +53,7 @@ nnoremap <silent> <leader>E :TlistToggle<CR>
 
 " Quickfix
 nnoremap <C-c><C-c> :copen<CR>
+nnoremap <C-c><C-l> :close<CR>
 nnoremap <C-c><C-n> :cnext<CR>
 nnoremap <C-c><C-p> :cprevious<CR>
 nnoremap <C-c>N :cnfile<CR>
