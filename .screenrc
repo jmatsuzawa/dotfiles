@@ -1,0 +1,42 @@
+escape ^Tt
+
+startup_message off
+vbell off
+
+defencoding eucJP
+
+##########################################
+# Window (tmux: Pane)
+##########################################
+bind s eval "split" "focus" "screen"
+bind ^S eval "split" "focus" "screen"
+bind v eval "split -v" "focus" "screen"
+bind ^V eval "split -v" "focus" "screen"
+
+bind ^J focus down
+bind ^K focus up
+bind ^H focus left
+bind ^L focus right
+
+# Remove current windows
+bind ^X remove
+
+# Resize window
+bind e eval 'command -c resize' 'echo "Resize window"'
+bind ^e eval 'command -c resize' 'echo "Resize window"'
+bind -c resize h eval 'command -c resize' 'resize -h -1'
+bind -c resize l eval 'command -c resize' 'resize -h +1'
+bind -c resize j eval 'command -c resize' 'resize -v +1'
+bind -c resize k eval 'command -c resize' 'resize -v -1'
+bind -c resize ^h eval 'command -c resize' 'resize -h -1'
+bind -c resize ^l eval 'command -c resize' 'resize -h +1'
+bind -c resize ^j eval 'command -c resize' 'resize -v +1'
+bind -c resize ^k eval 'command -c resize' 'resize -v -1'
+
+
+##########################################
+# Layout (tmux: Window)
+##########################################
+bind t eval "layout new" "screen"
+bind ^N layout next
+bind ^P layout prev
