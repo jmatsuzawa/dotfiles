@@ -20,6 +20,7 @@ bind ^L focus right
 
 # Remove current windows
 bind ^X remove
+bind x remove
 
 # Resize window
 bind e eval 'command -c resize' 'echo "Resize window"'
@@ -38,5 +39,9 @@ bind -c resize ^k eval 'command -c resize' 'resize -v -1'
 # Layout (tmux: Window)
 ##########################################
 bind t eval "layout new" "screen"
+bind n layout next
 bind ^N layout next
+bind p layout prev
 bind ^P layout prev
+
+hardstatus alwayslastline '%{= .g}%H%{-} %L=%-w%45L>%{=u g.}%n %t%{-}%+w'
