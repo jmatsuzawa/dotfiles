@@ -1,0 +1,26 @@
+typeset -U path PATH
+
+export SHRC_DIR="${XDG_CONFIG_HOME:-${HOME}/.config}/sh"
+
+############################################################
+# common preferences independent of shells
+############################################################
+COMMON_RC=${SHRC_DIR}/common_rc.sh
+if [ -r "${COMMON_RC}" ]; then
+  . ${COMMON_RC}
+fi
+
+
+############################################################
+# preferences dependent on zsh
+############################################################
+export WORDCHAR='*?_-.[]~/&;!#$%^(){}<>'
+
+
+############################################################
+# customized preferences
+############################################################
+CUSTOM_COMMON_RC=${SHRC_DIR}/custom_common_rc.sh
+if [ -r "$CUSTOM_COMMON_RC" ]; then
+  . ${CUSTOM_COMMON_RC}
+fi
