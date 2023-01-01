@@ -50,6 +50,10 @@
     "python.testing.pytestEnabled": true,
 
     "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {"before": ["<C-e>"], "after": ["<Esc>", "<S-a>"]},
+        {"before": ["<C-a>"], "after": ["<Esc>", "0", "i"]},
+    ],
     "vim.normalModeKeyBindings": [
         {"before": ["j"], "after": ["g", "j"]},
         {"before": ["k"], "after": ["g", "k"]},
