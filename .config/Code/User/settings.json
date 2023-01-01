@@ -1,0 +1,63 @@
+{
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.tabs.enabled": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideTabs": false,
+
+    "[html]": {
+        "editor.tabSize": 2,
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    "[json]": {
+        "editor.tabSize": 2,
+    },
+
+    "[markdown]": {
+        "editor.tabSize": 2,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off",
+        },
+    },
+
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+    },
+
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindings": [
+        {"before": ["j"], "after": ["g", "j"]},
+        {"before": ["k"], "after": ["g", "k"]},
+        {"before": ["t", "l"], "after": [":", "t", "a", "b", "n", "e", "x", "t", "<CR>"]},
+        {"before": ["t", "h"], "after": [":", "t", "a", "b", "p", "r", "e", "v", "<CR>"]},
+        {"before": ["t", "n"], "after": [":", "t", "a", "b", "n", "e", "w", "<CR>"]},
+    ],
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    "vim.visualstar": true,
+}
