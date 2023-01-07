@@ -1,4 +1,7 @@
 # This file is executed on invocation of interactive shell.
+# Different shells share this, so every command should be written in as compatible a way as possible.
+# But prefer readability/maintainability to compatibility.
+echo 'Running interactive.sh'
 
 # include-guard
 if [ -n "${INTERACTIVE_SH_INCLUDED}" ]; then
@@ -21,6 +24,9 @@ if [ -z "${EDITIR}" ]; then
   elif which editor > /dev/null 2>&1; then
     EDITOR=editor
     export EDITOR
+  elif which nano > /dev/null 2>&1; then
+    EDITOR=nano
+    export EDITOR
   fi
 fi
 
@@ -33,3 +39,7 @@ fi
 if [ -n "$LESSOPEN" ]; then
   export LESSOPEN
 fi
+
+# dash reads $ENV, if the shell is interactive
+ENV="${XDG_CONFIG_HOME}/sh/.dashrc"
+export ENV

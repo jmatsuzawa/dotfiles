@@ -1,0 +1,11 @@
+echo 'Running .dashrc'
+
+PS1='@@ ${USER}@$(hostname):${PWD}
+$ '
+export PS1
+
+PS2='> '
+export PS2
+
+PS4='+ '
+export PS4
