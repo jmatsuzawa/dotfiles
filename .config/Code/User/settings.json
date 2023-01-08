@@ -6,6 +6,13 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideTabs": false,
 
+    "[c]": {
+        "editor.tabSize": 4
+    },
+
+    "[cpp]": {
+        "editor.tabSize": 4
+    },
     "[html]": {
         "editor.tabSize": 2,
         "editor.suggest.insertMode": "replace",
@@ -35,6 +42,11 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
+    },
+
+    "[shellscript]": {
+        "editor.tabSize": 2,
+        "files.eol": "\n"
     },
 
     "[typescript]": {
