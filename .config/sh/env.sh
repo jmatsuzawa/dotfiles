@@ -17,3 +17,18 @@ fi
 
 PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
 export PATH
+
+# pyenv
+if [ -d "${HOME}/.pyenv" ]; then
+  PYENV_ROOT="${HOME}/.pyenv"
+  export PYENV_ROOT
+  PATH="${PYENV_ROOT}/bin:${PATH}"
+  export PATH
+  eval "`pyenv init --path`"
+  eval "`pyenv init -`"
+fi
+
+# nvm
+NVM_DIR="${HOME}/.config/nvm"
+export NVM_DIR
+[ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm

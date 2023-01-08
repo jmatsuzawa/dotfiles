@@ -43,3 +43,19 @@ fi
 # dash reads $ENV, if the shell is interactive
 ENV="${XDG_CONFIG_HOME}/sh/.dashrc"
 export ENV
+
+#######################################
+# Aliases
+#######################################
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias ll='ls -l'
+alias sl=ls
+alias view='vim -R'
+alias veiw=view
+
+#######################################
+# Python
+#######################################
+PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pystartuprc.py"
+export PYTHONSTARTUP
