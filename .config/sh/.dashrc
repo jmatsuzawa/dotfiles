@@ -1,7 +1,10 @@
 echo 'Running .dashrc'
 
-PS1='@@ ${USER}@$(hostname):${PWD}
-$ '
+if [ `id -u` -ne 0 ]; then
+  PS1='$ '
+else
+  PS1='# '
+fi
 export PS1
 
 PS2='> '
