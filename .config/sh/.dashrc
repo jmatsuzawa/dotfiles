@@ -1,0 +1,14 @@
+echo 'Running .dashrc'
+
+if [ `id -u` -ne 0 ]; then
+  PS1='$ '
+else
+  PS1='# '
+fi
+export PS1
+
+PS2='> '
+export PS2
+
+PS4='+ '
+export PS4
