@@ -2,6 +2,11 @@
     "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
     "files.autoSave": "afterDelay",
+    "terminal.integrated.commandsToSkipShell": [
+        "-editor.action.toggleTabFocusMode", // Ctrl+m
+        "-workbench.action.quickOpen", // Ctrl+p
+        "-workbench.action.terminal.focusFind", // Ctrl+f
+    ],
     "terminal.integrated.tabs.enabled": false,
     "zenMode.hideLineNumbers": false,
     "zenMode.hideTabs": false,
