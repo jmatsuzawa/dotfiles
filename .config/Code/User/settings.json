@@ -35,7 +35,7 @@
     },
 
     "[markdown]": {
-        "editor.tabSize": 2,
+        "editor.tabSize": 4,
         "editor.wordWrap": "on",
         "editor.quickSuggestions": {
             "comments": "off",
