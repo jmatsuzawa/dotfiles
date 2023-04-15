@@ -1,5 +1,3 @@
-echo 'Running .bashrc'
-
 if [[ -f "${HOME}/.bashrc.dist" ]]; then
   . "${HOME}/.bashrc.dist"
 fi

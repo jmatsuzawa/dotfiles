@@ -1,5 +1,3 @@
-echo 'Running .dashrc'
-
 if [ `id -u` -ne 0 ]; then
   PS1='$ '
 else
