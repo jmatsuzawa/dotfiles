@@ -49,6 +49,11 @@ export SAVEHIST=100000
 setopt SHARE_HISTORy
 
 #######################################
+# key bindings
+#######################################
+bindkey -e
+
+#######################################
 # options
 #######################################
 # See: https://zsh.sourceforge.io/Doc/Release/Options.html
