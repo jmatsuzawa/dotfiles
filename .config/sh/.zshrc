@@ -46,7 +46,7 @@ alias history='history 1'
 export HISTFILE="${HOME}/.zsh_history"
 export HISTSIZE=100000
 export SAVEHIST=100000
-setopt SHARE_HISTORy
+setopt SHARE_HISTORY
 
 #######################################
 # key bindings
@@ -58,5 +58,5 @@ bindkey -e
 #######################################
 # See: https://zsh.sourceforge.io/Doc/Release/Options.html
 
-setopt AUTO_PUSHd
+setopt AUTO_PUSHD
 unsetopt BEEP  # mute beeps
