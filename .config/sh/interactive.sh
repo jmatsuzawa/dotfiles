@@ -2,6 +2,17 @@
 # Different shells share this, so every command should be written in as compatible a way as possible.
 # But prefer readability/maintainability to compatibility.
 
+#######################################
+# Aliases
+#######################################
+# Sub processes do not inherit aliases, so they need to be set everytime before include-guard.
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias ll='ls -l'
+alias sl=ls
+alias view='vim -R'
+alias veiw=view
+
 # include-guard
 if [ -n "${INTERACTIVE_SH_INCLUDED}" ]; then
   return
@@ -42,16 +53,6 @@ fi
 # dash reads $ENV, if the shell is interactive
 ENV="${XDG_CONFIG_HOME}/sh/.dashrc"
 export ENV
-
-#######################################
-# Aliases
-#######################################
-alias ls='ls --color=auto'
-alias la='ls -A'
-alias ll='ls -l'
-alias sl=ls
-alias view='vim -R'
-alias veiw=view
 
 #######################################
 # Python
