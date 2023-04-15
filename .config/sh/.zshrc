@@ -53,6 +53,13 @@ setopt SHARE_HISTORY
 #######################################
 bindkey -e
 
+# If you enter some text and enter Ctrl-P or Ctrl-N, shell will respectively shows up or down history entry which begins with the text
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey '\C-P' history-beginning-search-backward-end
+bindkey '\C-N' history-beginning-search-forward-end
+
 #######################################
 # options
 #######################################
