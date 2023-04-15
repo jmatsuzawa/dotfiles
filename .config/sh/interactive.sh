@@ -1,7 +1,6 @@
 # This file is executed on invocation of interactive shell.
 # Different shells share this, so every command should be written in as compatible a way as possible.
 # But prefer readability/maintainability to compatibility.
-echo 'Running interactive.sh'
 
 # include-guard
 if [ -n "${INTERACTIVE_SH_INCLUDED}" ]; then

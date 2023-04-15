@@ -1,7 +1,7 @@
 # This file is executed on every invocation of your shell.
 # Different shells share this, so every command should be written in as compatible a way as possible.
 # But prefer readability/maintainability to compatibility.
-echo 'Running env.sh'
+
 # include-guard
 if [ -n "${ENV_SH_INCLUDED}" ]; then
   return
