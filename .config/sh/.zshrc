@@ -8,7 +8,7 @@ autoload -Uz colors; colors
 setopt PROMPT_SUBST
 
 function git-branch-name {
-  local branch status color
+  local branch status_msg color
   if [[ "$PWD" =~ '/\.git\>' ]]; then
     return
   fi
@@ -16,12 +16,12 @@ function git-branch-name {
   if [[ -z "$branch" ]]; then
     return
   fi
-  status=`git status 2> /dev/null`
-  if [[ -n `echo "$status" | grep "^nothing to"` ]]; then
+  status_msg=`git status 2> /dev/null`
+  if [[ -n `echo "$status_msg" | grep "^nothing to"` ]]; then
     color=${fg[green]}
-  elif [[ -n `echo "$status" | grep "^nothing added"` ]]; then
+  elif [[ -n `echo "$status_msg" | grep "^nothing added"` ]]; then
     color=${fg[yellow]}
-  elif [[ -n `echo "$status" | grep "^# Untracked"` ]]; then
+  elif [[ -n `echo "$status_msg" | grep "^# Untracked"` ]]; then
     color=${fg_bold[red]}
   else
     color=${fg[red]}
