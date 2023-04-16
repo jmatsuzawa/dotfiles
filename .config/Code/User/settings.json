@@ -6,6 +6,7 @@
         "-editor.action.toggleTabFocusMode", // Ctrl+m
         "-workbench.action.quickOpen", // Ctrl+p
         "-workbench.action.terminal.focusFind", // Ctrl+f
+        "-workbench.action.togglePanel", // Ctrl+j
     ],
     "terminal.integrated.tabs.enabled": false,
     "zenMode.hideLineNumbers": false,
