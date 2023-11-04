@@ -2,10 +2,10 @@
     "editor.minimap.enabled": false,
     "editor.tabFocusMode": false, // Disable changing focus by tab key
     "editor.wordWrap": "on",
-    "files.autoSave": "afterDelay",
     "terminal.integrated.commandsToSkipShell": [
         "-editor.action.toggleTabFocusMode", // Ctrl+m
         "-workbench.action.quickOpen", // Ctrl+p
+        "-workbench.action.quickOpenView", // Ctrl+q
         "-workbench.action.terminal.focusFind", // Ctrl+f
         "-workbench.action.togglePanel", // Ctrl+j
     ],
@@ -13,17 +13,22 @@
     "zenMode.hideLineNumbers": false,
     "zenMode.hideTabs": false,
 
+    ///////////////////////////////////////////////////////
+    // File Type Specific Settings
+    ///////////////////////////////////////////////////////
+
     "[c]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
     },
 
     "[cpp]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
     },
+
     "[html]": {
         "editor.tabSize": 2,
         "editor.suggest.insertMode": "replace",
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "vscode.html-language-features",
     },
 
     "[javascript]": {
@@ -49,6 +54,7 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
+        "editor.formatOnType": true,
     },
 
     "[shellscript]": {
@@ -62,26 +68,28 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
     },
 
-    "prettier.semi": true,
-    "prettier.singleQuote": true,
+    ///////////////////////////////////////////////////////
+    // Extension specific settings
+    ///////////////////////////////////////////////////////
 
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.flake8Enabled": true,
+    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    "markdown-preview-enhanced.mermaidTheme": "dark",
+
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
 
     "vim.hlsearch": true,
-    "vim.insertModeKeyBindings": [
+    "vim.insertModeKeyBindingsNonRecursive": [
         {"before": ["<C-e>"], "after": ["<Esc>", "<S-a>"]},
         {"before": ["<C-a>"], "after": ["<Esc>", "0", "i"]},
     ],
-    "vim.normalModeKeyBindings": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {"before": ["j"], "after": ["g", "j"]},
         {"before": ["k"], "after": ["g", "k"]},
         {"before": ["t", "l"], "after": [":", "t", "a", "b", "n", "e", "x", "t", "<CR>"]},
         {"before": ["t", "h"], "after": [":", "t", "a", "b", "p", "r", "e", "v", "<CR>"]},
         {"before": ["t", "n"], "after": [":", "t", "a", "b", "n", "e", "w", "<CR>"]},
+        {"before": ["v", "v"], "after": ["`", "[", "v", "`", "]"]},
     ],
     "vim.useCtrlKeys": true,
     "vim.useSystemClipboard": true,
