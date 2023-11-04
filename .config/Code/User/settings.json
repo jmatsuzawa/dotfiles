@@ -1,5 +1,6 @@
 {
     "editor.minimap.enabled": false,
+    "editor.tabFocusMode": false, // Disable changing focus by tab key
     "editor.wordWrap": "on",
     "files.autoSave": "afterDelay",
     "terminal.integrated.commandsToSkipShell": [
