@@ -1,9 +1,13 @@
 # This file contains bash-specific commands for login shell
 
-. "${HOME}/.config/sh/env.sh"
+if [[ -r "${HOME}/.config/sh/env.sh" ]]; then
+  . "${HOME}/.config/sh/env.sh"
+fi
 
-if [ -f "$HOME/.bashrc" ]; then
+if [[ -r "$HOME/.bashrc" ]]; then
   . "$HOME/.bashrc"
 fi
 
-. "${HOME}/.config/sh/interactive.sh"
+if [[ -r "${HOME}/.config/sh/interactive.sh" ]]; then
+  . "${HOME}/.config/sh/interactive.sh"
+fi
