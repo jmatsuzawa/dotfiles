@@ -72,6 +72,8 @@
     // Extension specific settings
     ///////////////////////////////////////////////////////
 
+    "markdown-mermaid.lightModeTheme": "dark",
+
     "markdown-preview-enhanced.previewTheme": "github-dark.css",
     "markdown-preview-enhanced.mermaidTheme": "dark",
 
