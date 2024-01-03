@@ -44,11 +44,11 @@ if [ -z "${EDITIR}" ]; then
   fi
 fi
 
-# set LESSOPEN
-if which lesspipe > /dev/null 2>&1; then
+# set LESSOPEN for less(1) preprocessor
+if has_command lesspipe.sh; then # for wofr06/lesspipe, RHEL
+  LESSOPEN='||lesspipe.sh %s'
+elif has_command lesspipe; then # for Debian
   LESSOPEN='|lesspipe %s'
-elif which lesspipe.sh > /dev/null 2>&1; then
-  LESSOPEN='|lesspipe.sh %s'
 fi
 if [ -n "$LESSOPEN" ]; then
   export LESSOPEN
