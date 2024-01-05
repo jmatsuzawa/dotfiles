@@ -15,19 +15,15 @@ has_command() {
 }
 
 if [ -z "${XDG_CONFIG_HOME}" ]; then
-  XDG_CONFIG_HOME="${HOME}/.config"
-  export XDG_CONFIG_HOME
+  export XDG_CONFIG_HOME="${HOME}/.config"
 fi
 
-PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
-export PATH
+export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
 # pyenv
 if [ -d "${HOME}/.pyenv" ]; then
-  PYENV_ROOT="${HOME}/.pyenv"
-  export PYENV_ROOT
+  export PYENV_ROOT="${HOME}/.pyenv"
   PATH="${PYENV_ROOT}/bin:${PATH}"
-  export PATH
   eval "`pyenv init --path`"
   eval "`pyenv init -`"
 fi

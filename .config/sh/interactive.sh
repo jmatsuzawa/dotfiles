@@ -21,8 +21,7 @@ EDITOR=`echo "$EDITOR" | tr -d '\n'`
 if [ -n "${INTERACTIVE_SH_INCLUDED}" ]; then
   return
 else
-  INTERACTIVE_SH_INCLUDED=1
-  export INTERACTIVE_SH_INCLUDED
+  export INTERACTIVE_SH_INCLUDED=1
 fi
 
 . "${HOME}/.config/sh/env.sh"
@@ -30,36 +29,27 @@ fi
 # set EDITOR
 if [ -z "${EDITIR}" ]; then
   if which vim > /dev/null 2>&1; then
-    EDITOR=vim
-    export EDITOR
+    export EDITOR=vim
   elif which vi > /dev/null 2>&1; then
-    EDITOR=vi
-    export EDITOR
+    export EDITOR=vi
   elif which editor > /dev/null 2>&1; then
-    EDITOR=editor
-    export EDITOR
+    export EDITOR=editor
   elif which nano > /dev/null 2>&1; then
-    EDITOR=nano
-    export EDITOR
+    export EDITOR=nano
   fi
 fi
 
 # set LESSOPEN for less(1) preprocessor
 if has_command lesspipe.sh; then # for wofr06/lesspipe, RHEL
-  LESSOPEN='||lesspipe.sh %s'
+  export LESSOPEN='||lesspipe.sh %s'
 elif has_command lesspipe; then # for Debian
-  LESSOPEN='|lesspipe %s'
-fi
-if [ -n "$LESSOPEN" ]; then
-  export LESSOPEN
+  export LESSOPEN='|lesspipe %s'
 fi
 
 # dash reads $ENV, if the shell is interactive
-ENV="${XDG_CONFIG_HOME}/sh/.dashrc"
-export ENV
+export ENV="${XDG_CONFIG_HOME}/sh/.dashrc"
 
 #######################################
 # Python
 #######################################
-PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pystartuprc.py"
-export PYTHONSTARTUP
+export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pystartuprc.py"
