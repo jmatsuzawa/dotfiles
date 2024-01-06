@@ -15,7 +15,7 @@ alias veiw=view
 
 # Prevent vscode from appending a newline to EDITOR.
 # I'm not sure why and how, but launching vscode from wsl terminal by `code .` will appends a newline.
-EDITOR=`echo "$EDITOR" | tr -d '\n'`
+EDITOR=$(echo "$EDITOR" | tr -d '\n')
 
 # include-guard
 if [ -n "${INTERACTIVE_SH_INCLUDED}" ]; then
