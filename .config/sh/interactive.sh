@@ -47,9 +47,9 @@ elif has_command lesspipe; then # for Debian
 fi
 
 # dash reads $ENV, if the shell is interactive
-export ENV="${XDG_CONFIG_HOME}/sh/.dashrc"
+export ENV="${HOME}/.config/sh/.dashrc"
 
 #######################################
 # Python
 #######################################
-export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pystartuprc.py"
+export PYTHONSTARTUP="${HOME}/.config/python/pystartuprc.py"

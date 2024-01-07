@@ -14,10 +14,6 @@ has_command() {
   type "$1" > /dev/null 2>&1
 }
 
-if [ -z "${XDG_CONFIG_HOME}" ]; then
-  export XDG_CONFIG_HOME="${HOME}/.config"
-fi
-
 export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
 # pyenv
