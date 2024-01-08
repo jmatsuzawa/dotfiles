@@ -41,9 +41,18 @@ fi
 
 # set LESSOPEN for less(1) preprocessor
 if has_command lesspipe.sh; then # for wofr06/lesspipe, RHEL
-  export LESSOPEN='||lesspipe.sh %s'
+  if [ -x "${HOME}/.config/custom-lesspipe" ]; then
+    export LESSOPEN="||${HOME}/.config/custom-lesspipe %s"
+  else
+    export LESSOPEN='||lesspipe.sh %s'
+  fi
 elif has_command lesspipe; then # for Debian
-  export LESSOPEN='|lesspipe %s'
+  if [ -x "${HOME}/.config/custom-lesspipe" ]; then
+    # Debian lesspipe does not support double pipes...
+    export LESSOPEN="|${HOME}/.config/custom-lesspipe %s"
+  else
+    export LESSOPEN='|lesspipe %s'
+  fi
 fi
 
 # dash reads $ENV, if the shell is interactive
