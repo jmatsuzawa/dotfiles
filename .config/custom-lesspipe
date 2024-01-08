@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Prevent recursive invoke of lesspipe
+export LESS="${LESS} L"
+
+has_command() {
+  type "$@" &> /dev/null
+}
+
+is_binary() {
+  local mime=$(file -bL --mime "$1")
+  [[ "$mime" == *charset=binary* && "$mime" != *application/x-empty* ]]
+}
+
+os_lesspipe() {
+  if has_command lesspipe.sh; then # for wofr06/lesspipe, RHEL
+    lesspipe.sh "$1"
+  elif has_command lesspipe; then # for Debian
+    lesspipe "$1"
+  else
+    return 1
+  fi
+}
+
+if [[ "$1" =~ https?:// ]] && has_command curl jq; then
+  curl -s "$1" \
+    | jq -Rr '. as $line | fromjson? // $line' # Format JSON
+  exit 0
+fi
+
+os_lesspipe "$1"
+if [[ "$?" == 0 ]]; then
+  # TODO: How to dump binary data on Debian? Its lesspipe always exits with 0.
+  exit 0
+elif is_binary "$1"; then
+  # TODO: od options are not portable
+  od -tx1z -Ax "$1" && exit 0
+fi
+
+exit 1
