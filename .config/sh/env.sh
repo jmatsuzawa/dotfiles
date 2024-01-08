@@ -11,7 +11,7 @@ else
 fi
 
 has_command() {
-  type "$1" > /dev/null 2>&1
+  type "$@" > /dev/null 2>&1
 }
 
 export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
