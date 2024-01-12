@@ -17,6 +17,25 @@ alias veiw=view
 # I'm not sure why and how, but launching vscode from wsl terminal by `code .` will appends a newline.
 EDITOR=$(echo "$EDITOR" | tr -d '\n')
 
+# nvm
+if [ -d "${HOME}/.config/nvm" ]; then
+  export NVM_DIR="${HOME}/.config/nvm"
+  [ -s "${NVM_DIR}/nvm.sh" ] && \. "${NVM_DIR}/nvm.sh"  # This loads nvm
+fi
+
+# pyenv
+if [ -d "${HOME}/.pyenv" ]; then
+  if [ -z "${PYENV_ROOT}" ]; then
+    export PYENV_ROOT="${HOME}/.pyenv"
+    PATH="${PYENV_ROOT}/bin:${PATH}"
+  fi
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+fi
+
+# rust
+# . "$HOME/.cargo/env"
+
 # include-guard
 if [ -n "${INTERACTIVE_SH_INCLUDED}" ]; then
   return
@@ -24,7 +43,15 @@ else
   export INTERACTIVE_SH_INCLUDED=1
 fi
 
-. "${HOME}/.config/sh/env.sh"
+# go
+if [ -d "${HOME}/go/bin" ]; then
+  PATH="${HOME}/go/bin:${PATH}"
+fi
+if [ -d "${HOME}/.local/go/bin" ]; then
+  PATH="${HOME}/.local/go/bin:${PATH}"
+fi
+
+# . "${HOME}/.config/sh/env.sh"
 
 # set EDITOR
 if [ -z "${EDITIR}" ]; then
@@ -62,3 +89,5 @@ export ENV="${HOME}/.config/sh/.dashrc"
 # Python
 #######################################
 export PYTHONSTARTUP="${HOME}/.config/python/pystartuprc.py"
+
+export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
