@@ -32,8 +32,8 @@ function git-branch-name {
 }
 
 # The prompt is green.
-# It will show a red 'X' attention at the beginning of the prompt, if the last command failed.
-export PROMPT=$'$(__status=$?; (( $__status != 0 )) && echo "%{$bg[red]%}X($__status)%{$reset_color%} ")%{$fg[green]%}%n@%m:%~ %{$reset_color%}$(git-branch-name)%{$fg[green]%}\n%#%{$reset_color%} '
+# If the last command failed, the prompt shows the status code in red the beginning
+export PROMPT=$'$(__status=$?; (( $__status != 0 )) && echo "%{$bg[red]%}($__status)%{$reset_color%} ")%{$fg[green]%}%n@%m:%~ %{$reset_color%}$(git-branch-name)%{$fg[green]%}\n%#%{$reset_color%} '
 
 #######################################
 # Alias
