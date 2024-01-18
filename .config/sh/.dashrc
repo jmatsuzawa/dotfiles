@@ -7,7 +7,5 @@ if [ $(id -u) -ne 0 ]; then
 else
   export PS1='# '
 fi
-
 export PS2='> '
-
 export PS4='+ '
