@@ -3,6 +3,5 @@ if [ -r "${HOME}/.config/sh/env.sh" ]; then
   . "${HOME}/.config/sh/env.sh"
 fi
 
-if [ -r "${HOME}/.config/sh/.dashrc" ]; then
-  . "${HOME}/.config/sh/.dashrc"
-fi
+: ${ENV:=${HOME}/.config/sh/.dashrc}
+export ENV
