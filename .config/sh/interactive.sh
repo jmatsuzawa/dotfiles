@@ -91,3 +91,5 @@ export ENV="${HOME}/.config/sh/.dashrc"
 export PYTHONSTARTUP="${HOME}/.config/python/pystartuprc.py"
 
 export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
+
+export HOSTNAME=$(uname -n)

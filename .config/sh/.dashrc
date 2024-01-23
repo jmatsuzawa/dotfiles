@@ -2,10 +2,17 @@ if [ -r "${HOME}/.config/sh/interactive.sh" ]; then
   . "${HOME}/.config/sh/interactive.sh"
 fi
 
+# Prompt
+color=$(env echo -e '\e[0;32;40m') # green
+color_clear=$(env echo -e '\e[0m')
 if [ $(id -u) -ne 0 ]; then
-  export PS1='$ '
+  prompt_sign='$'
 else
-  export PS1='# '
+  prompt_sign='#'
 fi
+export PS1="${color}"'${USER}@${HOSTNAME}:$(echo ${PWD}|sed s,${HOME},~,)
+(dash)'"${prompt_sign}${color_clear} "
+unset color color_clear prompt_sign
+
 export PS2='> '
 export PS4='+ '
