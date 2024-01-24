@@ -10,7 +10,7 @@ if [ $(id -u) -ne 0 ]; then
 else
   prompt_sign='#'
 fi
-export PS1="${color}"'${USER}@${HOSTNAME}:$(echo ${PWD}|sed s,${HOME},~,)
+export PS1='$( __status=$?; [ $__status != 0 ] && echo "\e[0;37;41m(${__status})\e[0m " )'"${color}"'${USER}@${HOSTNAME}:$(echo ${PWD}|sed s,${HOME},~,)
 (dash)'"${prompt_sign}${color_clear} "
 unset color color_clear prompt_sign
 
