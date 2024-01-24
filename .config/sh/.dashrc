@@ -3,7 +3,7 @@ if [ -r "${HOME}/.config/sh/interactive.sh" ]; then
 fi
 
 # Prompt
-color=$(env echo -e '\e[0;32;40m') # green
+color=$(env echo -e '\e[0;32m') # green
 color_clear=$(env echo -e '\e[0m')
 if [ $(id -u) -ne 0 ]; then
   prompt_sign='$'
