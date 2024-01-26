@@ -66,6 +66,7 @@ if [ -z "${EDITIR}" ]; then
   fi
 fi
 
+export LESS="${LESS} R"
 # set LESSOPEN for less(1) preprocessor
 if has_command lesspipe.sh; then # for wofr06/lesspipe, RHEL
   if [ -x "${HOME}/.config/custom-lesspipe" ]; then
