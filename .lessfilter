@@ -4,9 +4,11 @@ has_commands() {
   type "$@" &> /dev/null
 }
 
-if [[ $(file -b "$1") =~ ^ELF ]] && type readelf &> /dev/null ; then
-  readelf -a "$1"
-  exit 0
+if [[ $(file -b "$1") =~ ^ELF ]]; then
+  if has_commands readelf; then
+    readelf -a "$1" && exit 0
+  fi
+  exit 1
 fi
 
 if [[ $(file -b "${1}") =~ ^Squashfs\ filesystem ]]; then
