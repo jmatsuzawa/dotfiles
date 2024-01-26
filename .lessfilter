@@ -1,8 +1,25 @@
 #!/usr/bin/env bash
 
+has_commands() {
+  type "$@" &> /dev/null
+}
+
 if [[ $(file -b "$1") =~ ^ELF ]] && type readelf &> /dev/null ; then
   readelf -a "$1"
   exit 0
+fi
+
+if [[ $(file -b "${1}") =~ ^Squashfs\ filesystem ]]; then
+  if has_commands unsquashfs; then
+    unsquashfs -n -ll "${1}" && exit 0
+  elif has_commands sqfs2tar; then
+    sqfs2tar "${1}" | tar -tv && exit 0
+  fi
+  exit 1
+fi
+
+if [[ "${1}" =~ .ipk$ ]]; then
+  tar -tvf "${1}" && exit 0
 fi
 
 exit 1
