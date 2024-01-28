@@ -24,4 +24,9 @@ if [[ "${1}" =~ .ipk$ ]]; then
   tar -tvf "${1}" && exit 0
 fi
 
+if [[ $(file -b "${1}") =~ troff ]]; then
+  man "${1}" && exit 0
+  exit 1
+fi
+
 exit 1
