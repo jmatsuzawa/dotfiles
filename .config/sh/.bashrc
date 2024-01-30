@@ -12,4 +12,4 @@ export HISTSIZE=100000
 
 # The prompt is green.
 # If the last command failed, the prompt shows the status code in red the beginning
-export PS1='$( __status=$?; (( ${__status} != 0 )) && echo "\[\033[1;37;41m\](${__status})\[\033[0m\] ")\[\033[0;32m\]\u@\h:\w\n(\s)$\[\033[0m\] '
+export PS1='$( __status=$?; (( ${__status} != 0 )) && echo "\[\e[1;37;41m\](${__status})\[\e[0m\] ")\[\e[0;32m\]\u@\h:\w\n(\s)$\[\e[0m\] '
