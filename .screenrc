@@ -3,7 +3,7 @@ escape ^Tt
 startup_message off
 vbell off
 
-defencoding eucJP
+# defencoding eucJP
 
 ##########################################
 # Window (tmux: Pane)
