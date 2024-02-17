@@ -34,7 +34,9 @@ if [ -d "${HOME}/.pyenv" ]; then
 fi
 
 # rust
-# . "$HOME/.cargo/env"
+if [ -r "${HOME}/.cargo/env" ]; then
+  . "${HOME}/.cargo/env"
+fi
 
 # include-guard
 if [ -n "${INTERACTIVE_SH_INCLUDED}" ]; then
