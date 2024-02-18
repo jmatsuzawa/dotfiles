@@ -93,6 +93,11 @@ export ENV="${HOME}/.config/sh/.dashrc"
 #######################################
 export PYTHONSTARTUP="${HOME}/.config/python/pystartuprc.py"
 
+# zig
+if [ -x "${HOME}/zig/zig" ]; then
+  PATH="${HOME}/zig:${PATH}"
+fi
+
 export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
 export HOSTNAME=$(uname -n)
