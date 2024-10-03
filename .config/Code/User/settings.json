@@ -1,8 +1,12 @@
 {
+    "editor.largeFileOptimizations": false,
     "editor.minimap.enabled": false,
     "editor.renderWhitespace": "boundary",
+    "editor.tabCompletion": "on",
     "editor.tabFocusMode": false, // Disable changing focus by tab key
+    "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordWrap": "on",
+
     "terminal.integrated.commandsToSkipShell": [
         "-editor.action.toggleTabFocusMode", // Ctrl+m
         "-workbench.action.quickOpen", // Ctrl+p
@@ -73,6 +77,8 @@
     // Extension specific settings
     ///////////////////////////////////////////////////////
 
+    "github.copilot.editor.enableAutoCompletions": true,
+
     "markdown-mermaid.lightModeTheme": "dark",
 
     "markdown-preview-enhanced.previewTheme": "github-dark.css",
@@ -93,6 +99,13 @@
         {"before": ["t", "h"], "after": [":", "t", "a", "b", "p", "r", "e", "v", "<CR>"]},
         {"before": ["t", "n"], "after": [":", "t", "a", "b", "n", "e", "w", "<CR>"]},
         {"before": ["v", "v"], "after": ["`", "[", "v", "`", "]"]},
+        {"before": ["<c-i>"], "commands": ["interactiveEditor.start"]},
+        {"before": ["<c-I>"], "commands": ["workbench.action.chat.open"]},
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {"before": ["<c-i>"], "commands": ["interactiveEditor.start"]},
+        {"before": ["j"], "after": ["g", "j"]},
+        {"before": ["k"], "after": ["g", "k"]},
     ],
     "vim.useCtrlKeys": true,
     "vim.useSystemClipboard": true,
