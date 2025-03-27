@@ -6,7 +6,7 @@
 # Aliases
 #######################################
 # Sub processes do not inherit aliases, so they need to be set everytime before include-guard.
-alias ls='ls --color=auto'
+alias ls='ls -F -G --color=auto '
 alias la='ls -A'
 alias ll='ls -l'
 alias sl=ls
@@ -24,7 +24,7 @@ if [ -d "${HOME}/.config/nvm" ]; then
 fi
 
 # pyenv
-if [ -d "${HOME}/.pyenv" ]; then
+if [ -e "${HOME}/.pyenv/bin/pyenv" ]; then
   if [ -z "${PYENV_ROOT}" ]; then
     export PYENV_ROOT="${HOME}/.pyenv"
     PATH="${PYENV_ROOT}/bin:${PATH}"
@@ -68,7 +68,7 @@ if [ -z "${EDITIR}" ]; then
   fi
 fi
 
-export LESS="${LESS} R"
+export LESS="${LESS} FR"
 # set LESSOPEN for less(1) preprocessor
 if has_command lesspipe.sh; then # for wofr06/lesspipe, RHEL
   if [ -x "${HOME}/.config/custom-lesspipe" ]; then
@@ -85,19 +85,52 @@ elif has_command lesspipe; then # for Debian
   fi
 fi
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+
 # dash reads $ENV, if the shell is interactive
 export ENV="${HOME}/.config/sh/.dashrc"
 
 #######################################
 # Python
 #######################################
-export PYTHONSTARTUP="${HOME}/.config/python/pystartuprc.py"
+PYTHONSTARTUP="${HOME}/.config/python/pystartuprc.py"
+if [ -r "${PYTHONSTARTUP}" ]; then
+  export PYTHONSTARTUP
+fi
 
 # zig
 if [ -x "${HOME}/zig/zig" ]; then
   PATH="${HOME}/zig:${PATH}"
 fi
 
+# Homebrew
+HOMEBREW_PATH="${HOME}/.local/homebrew"
+if [ -d "${HOMEBREW_PATH}/bin" ]; then
+  PATH="${HOMEBREW_PATH}/bin:${PATH}"
+fi
+# if [ -d /opt/homebrew/bin ]; then
+#   PATH="/opt/homebrew/bin:${PATH}"
+# fi
+
 export PATH="${HOME}/.local/bin:${HOME}/bin:${PATH}"
 
+# Swift
+SWIFT_PATH="${HOME}/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin"
+if [ -d "${SWIFT_PATH}" ]; then
+  PATH="${SWIFT_PATH}:${PATH}"
+#   export TOOLCHAINS=$(plutil -extract CFBundleIdentifier raw "${HOME}/Library/Developer/Toolchains/swift-latest.xctoolchain/Info.plist")
+fi
+
 export HOSTNAME=$(uname -n)
+
+# For macOS cocoapods
+# GEM_HOME="${HOME}/.gem"
+# if [ -d "${GEM_HOME}" ]; then
+#   export GEM_HOME
+#   pod_path=$(gem which cocoapods 2>&1 | grep -v '^Ignoring' | grep "^${HOME}" | sed 's,/gems.*,/bin,')
+#   if [ -n "${pod_path}" ]; then
+#     export PATH="${pod_path}:${GEM_HOME}/bin:${PATH}"
+#   fi
+# fi

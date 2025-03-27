@@ -77,5 +77,5 @@ unsetopt BEEP  # mute beeps
 zstyle :compinstall filename "${HOME}/.zshrc"
 
 autoload -Uz compinit
-compinit
+compinit -i # `-i` ignores insecure directories
 # End of lines added by compinstall
