@@ -85,9 +85,6 @@ elif has_command lesspipe; then # for Debian
   fi
 fi
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 
 # dash reads $ENV, if the shell is interactive
 export ENV="${HOME}/.config/sh/.dashrc"
