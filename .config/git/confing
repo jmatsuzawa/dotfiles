@@ -1,0 +1,8 @@
+[core]
+	quotepath = false
+[init]
+	defaultBranch = main
+
+# Later settings override earlier ones
+[include]
+	path = ~/.config/gitconfig/gitconfig-private
